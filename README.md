@@ -17,7 +17,7 @@ pnpm --filter web run dev
 
 Install Tailwind CSS, PostCSS, and Autoprefixer as development dependencies in the `web` workspace:
 ```bash
-pnpm --filter web add -D tailwindcss postcss autoprefixer
+pnpm --filter web add -D tailwindcss@3.4.17 postcss autoprefixer
 ```
 
 ### 4. Initialize Tailwind CSS Configuration
@@ -95,14 +95,14 @@ Inside `apps/web/package.json`, add the following dependency to `devDependencies
 
 In `apps/web/postcss.config.js`:
 ```javascript
-const config = require("tailwind-config/postcss.config.js");
-module.exports = config;
+import config from "tailwind-config/postcss.config.js";
+export default config;
 ```
 
 In `apps/web/tailwind.config.js`:
 ```javascript
-const config = require("tailwind-config/tailwind.config.js");
-module.exports = config;
+import config from "tailwind-config/tailwind.config.js";
+export default config;
 ```
 
 ### 7. Update Global CSS and Layout
